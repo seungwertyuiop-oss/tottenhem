@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tottenhem Kart Rush</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-shell">
+      <div class="top-bar">
+        <div class="brand">Tottenhem Kart Rush</div>
+        <div class="hud">
+          <div><span>Lap</span><strong id="lapValue">1</strong></div>
+          <div><span>Speed</span><strong id="speedValue">0</strong></div>
+          <div><span>Rank</span><strong id="rankValue">1/4</strong></div>
+        </div>
+      </div>
+
+      <canvas id="gameCanvas" width="960" height="540"></canvas>
+
+      <div class="controls">
+        <div class="panel">
+          <h3>Controls</h3>
+          <p>W / ↑ : accelerate</p>
+          <p>S / ↓ : brake</p>
+          <p>A / D or ← / → : steer</p>
+          <p>Space : boost</p>
+        </div>
+        <div class="panel">
+          <h3>Goal</h3>
+          <p>Finish 3 laps, beat the AI riders, and grab boost pads.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+:root {
+  --bg: #09121c;
+  --panel: rgba(9, 19, 31, 0.8);
+  --panel-border: rgba(130, 197, 255, 0.45);
+  --text: #edf7ff;
+  --accent: #6fe0ff;
+  --accent-2: #ffd166;
+  --grass: #184a39;
+  --road: #303b46;
+  --road-dark: #1f2730;
+  --line: #f3f4f6;
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: radial-gradient(circle at top, #142b3b 0%, #0a1521 42%, #070d14 100%);
+  color: var(--text);
+  font-family: Inter, "Segoe UI", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.game-shell {
+  width: min(1100px, 100%);
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 12px 28px var(--shadow);
+}
+
+.brand {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.hud {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.hud > div {
+  min-width: 110px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #dfeeff;
+}
+
+.hud strong {
+  color: var(--accent-2);
+  font-size: 1.05rem;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(180deg, #0a2432 0%, #0e1d22 100%);
+  border-left: 1px solid var(--panel-border);
+  border-right: 1px solid var(--panel-border);
+  box-shadow: 0 18px 38px var(--shadow);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.panel h3 {
+  margin: 0 0 10px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+}
+
+.panel p {
+  margin: 6px 0;
+  color: #dfeeff;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hud {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
